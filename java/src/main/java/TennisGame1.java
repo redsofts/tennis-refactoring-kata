@@ -12,13 +12,38 @@ public class TennisGame1 implements TennisGame {
     }
 
     public void wonPoint(String playerName) {
-        if (playerName == "player1")
+        if (playerName.equals("player1"))
             m_score1 += 1;
         else
             m_score2 += 1;
     }
 
-    public String getScore() {
+    @Override
+    public String getScore(){
+        return _getScore(m_score1, m_score2);
+    }
+
+    private String _getScore(int m_score1, int m_score2){
+        String score = "";
+        if(!TennisGame.getScoreOption1(m_score1, m_score2).isEmpty()){
+            score = TennisGame.getScoreOption1(m_score1, m_score2);
+        }else
+
+        if(!TennisGame.getScoreOption2(m_score1, m_score2).isEmpty()){
+            score = TennisGame.getScoreOption2(m_score1, m_score2);
+        }else
+
+        {
+            score = TennisGame.getScoreOption3(m_score1, m_score2);
+        }
+
+        return score;
+
+    }
+
+
+
+   /* public String getScore() {
         String score = "";
         int tempScore=0;
         if (m_score1==m_score2)
@@ -72,5 +97,5 @@ public class TennisGame1 implements TennisGame {
             }
         }
         return score;
-    }
+    }*/
 }
