@@ -27,13 +27,13 @@ public class TennisGame1 implements TennisGame {
         String score = "";
         if(!TennisGame.getScoreOption1(m_score1, m_score2).isEmpty()){
             score = TennisGame.getScoreOption1(m_score1, m_score2);
-        }else
+        }
 
-        if(!TennisGame.getScoreOption2(m_score1, m_score2).isEmpty()){
+        else if(!TennisGame.getScoreOption2(m_score1, m_score2).isEmpty()){
             score = TennisGame.getScoreOption2(m_score1, m_score2);
-        }else
+        }
 
-        {
+        else {
             score = TennisGame.getScoreOption3(m_score1, m_score2);
         }
 
